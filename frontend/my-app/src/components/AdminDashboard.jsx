@@ -28,12 +28,12 @@ export default function AdminDashboard() {
   const [selectedLeadId, setSelectedLeadId] = useState("");
 
   const API_MAP = {
-    agents: "http://127.0.0.1:5000/agents",
-    buyers: "http://127.0.0.1:5000/buyers",
-    sellers: "http://127.0.0.1:5000/sellers",
-    leads: "http://127.0.0.1:5000/leads",
+    agents: "https://realestate-crm-cfdg.onrender.com/agents",
+    buyers: "https://realestate-crm-cfdg.onrender.com/buyers",
+    sellers: "https://realestate-crm-cfdg.onrender.com/sellers",
+    leads: "https://realestate-crm-cfdg.onrender.com/leads",
     assignLeadToAgent: (agentId) =>
-      `http://127.0.0.1:5000/agents/${agentId}/assign-lead`,
+      `https://realestate-crm-cfdg.onrender.com/agents/${agentId}/assign-lead`,
   };
 
   const fetchData = async () => {
@@ -163,7 +163,7 @@ export default function AdminDashboard() {
 
   const updateLeadStatus = async (leadId, update) => {
     try {
-      const res = await fetch(`http://127.0.0.1:5000/leads/${leadId}`, {
+      const res = await fetch(`https://realestate-crm-cfdg.onrender.com/leads/${leadId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(update),
@@ -182,7 +182,7 @@ export default function AdminDashboard() {
 
   const updateSeller = async (sellerId, update) => {
     try {
-      const res = await fetch(`http://127.0.0.1:5000/sellers/${sellerId}`, {
+      const res = await fetch(`https://realestate-crm-cfdg.onrender.com/sellers/${sellerId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(update),
