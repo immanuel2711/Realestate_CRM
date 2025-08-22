@@ -7,7 +7,8 @@ from bson import ObjectId
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])
+CORS(app)
+
 
 app.config["JWT_SECRET_KEY"] = "supersecretkey"
 jwt = JWTManager(app)
@@ -731,4 +732,4 @@ def delete_buyer(buyer_id):
     return jsonify({"msg": "Buyer deleted successfully"}), 200
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)
