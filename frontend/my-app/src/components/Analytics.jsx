@@ -35,14 +35,14 @@ export default function Analytics() {
     async function fetchAnalytics() {
       try {
         const [res1, res2, res3, res4, res5, res6, res7, res8] = await Promise.all([
-          fetch("http://127.0.0.1:5000/analytics/top-locations"),
-          fetch("http://127.0.0.1:5000/analytics/average-property-values"),
-          fetch("http://127.0.0.1:5000/analytics/leads-pipeline"),
-          fetch("http://127.0.0.1:5000/analytics/buyer-insights"),
-          fetch("http://127.0.0.1:5000/analytics/seller-insights"),
-          fetch("http://127.0.0.1:5000/analytics/market-demand-vs-supply"),
-          fetch("http://127.0.0.1:5000/analytics/market-value"),
-          fetch("http://127.0.0.1:5000/analytics/conversion-rate") // ✅ new API
+          fetch("https://realestate-crm-cfdg.onrender.com/analytics/top-locations"),
+          fetch("https://realestate-crm-cfdg.onrender.com/analytics/average-property-values"),
+          fetch("https://realestate-crm-cfdg.onrender.com/analytics/leads-pipeline"),
+          fetch("https://realestate-crm-cfdg.onrender.com/analytics/buyer-insights"),
+          fetch("https://realestate-crm-cfdg.onrender.com/analytics/seller-insights"),
+          fetch("https://realestate-crm-cfdg.onrender.com/analytics/market-demand-vs-supply"),
+          fetch("https://realestate-crm-cfdg.onrender.com/analytics/market-value"),
+          fetch("https://realestate-crm-cfdg.onrender.com/analytics/conversion-rate") // ✅ new API
         ]);
 
         const json1 = await res1.json();
