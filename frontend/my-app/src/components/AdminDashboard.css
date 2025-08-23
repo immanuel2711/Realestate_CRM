@@ -266,14 +266,17 @@ form button:hover {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 0 10px;
+    padding: 0 12px;
     box-shadow: 0 4px 12px rgba(56,189,248,0.25);
     border-right: none;
     border-bottom: 1px solid rgba(255,255,255,0.15);
     z-index: 100;
     overflow-x: auto;
     white-space: nowrap;
+    scrollbar-width: none; /* hide scrollbar Firefox */
   }
+  .nav-buttons::-webkit-scrollbar { display: none; } /* hide scrollbar Chrome */
+  
   .nav-buttons button {
     flex: 0 0 auto;
     font-size: 14px;
@@ -298,9 +301,20 @@ form button:hover {
     padding: 80px 16px 24px;
   }
 
-  .dashboard-header h1 {
-    font-size: 1.8rem;
+  /* ✅ Center the Dashboard Heading */
+  .dashboard-header {
+    justify-content: center;
     text-align: center;
+  }
+  .dashboard-header h1 {
+    font-size: 1.9rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /* ✅ Prevent tiles from cutting */
+  .nav-buttons {
+    padding-right: 20px; /* extra right space */
   }
 
   /* Table scroll on small screens */
@@ -325,7 +339,7 @@ form button:hover {
 @media (max-width: 480px) {
   .dashboard-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
   }
   .nav-buttons button {
