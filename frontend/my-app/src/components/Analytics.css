@@ -251,16 +251,36 @@
 @media (max-width: 768px) {
   .analytics-dashboard {
     padding: 2rem 1.2rem;
+    align-items: flex-start; /* move content left */
   }
+
+  .analytics-grid {
+    grid-template-columns: 1fr !important; /* stack tiles vertically */
+  }
+
   .stat-box {
     font-size: 0.85rem;
     padding: 0.9rem 1rem;
   }
+
   .tile {
     text-align: center;
     padding: 2rem 1.2rem;
+    width: 100%;
+  }
+
+  h1 {
+    margin-right: 0 !important;  /* remove fixed margin */
+    text-align: left;            /* move Admin Dashboard left */
+    width: 100%;
+  }
+
+  .analytics-nav {
+    justify-content: flex-start !important; /* move nav buttons left */
+    flex-wrap: wrap;
   }
 }
+
 .conversion-text {
   display: flex;
   justify-content: space-between;
@@ -273,6 +293,7 @@
   color: #00cfff; /* neon blue highlight */
   text-shadow: 0 0 8px rgba(0, 200, 255, 0.6);
 }
+
 h1{
-  margin-right: 200px;
+  margin-right: 200px; /* PC view stays intact */
 }
