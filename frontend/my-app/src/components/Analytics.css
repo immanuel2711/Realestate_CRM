@@ -296,4 +296,52 @@
 
 h1{
   margin-right: 200px; /* PC view stays intact */
+}/* === Mobile fixes (max-width: 768px) === */
+@media (max-width: 768px) {
+  /* Dashboard container */
+  .analytics-dashboard {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  /* Sidebar hidden or collapsed */
+  .sidebar {
+    display: none; /* hide sidebar on mobile */
+  }
+
+  /* Header row fix */
+  .analytics-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* push h1 + button left */
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .analytics-header h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    text-align: left;
+  }
+
+  .analytics-header button {
+    align-self: flex-start; /* keep button left */
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  /* Grid fix → single column */
+  .analytics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem;
+    width: 100%;
+  }
+
+  /* Tile adjustments */
+  .tile {
+    padding: 1.5rem 1rem;
+    width: 100%;
+  }
 }
+
+
