@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // <-- import useNavigate
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("admin"); // for MVP
-  const [password, setPassword] = useState("");
+  // Both fields pre-filled with "admin"
+  const [email, setEmail] = useState("admin"); 
+  const [password, setPassword] = useState("admin");
   const [error, setError] = useState("");
 
   const navigate = useNavigate(); // <-- hook for navigation
@@ -22,7 +23,7 @@ export default function LoginPage() {
         localStorage.setItem("token", data.access_token);
 
         // Redirect to Admin Dashboard
-        navigate("/admindashboard"); // <-- route path
+        navigate("/admindashboard");
       } else {
         setError(data.msg);
       }
